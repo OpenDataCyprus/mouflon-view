@@ -1,22 +1,71 @@
 @import "compass/css3";
 
+@-webkit-keyframes bounce {
+	0%{ bottom: 1em; }
+	10%{ bottom: 2em; }
+	20%{ bottom: 1em; }
+	25%{ bottom: .75em; }
+	30%{ bottom: 1em; }
+	100%{ bottom: 1em; }
+}
+@keyframes bounce {
+	0%{ bottom: 1em; }
+	10%{ bottom: 2em; }
+	20%{ bottom: 1em; }
+	25%{ bottom: .75em; }
+	30%{ bottom: 1em; }
+	100%{ bottom: 1em; }
+}
+
+
 body {
-	height: 100vh;
 	margin: 0;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+.state-home{
+	position: relative;
+	height: 100vh;
 	background-image: url("../../images/mouflon-bg.jpg");
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
+
+	.center-container{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+
+		text-shadow: 0 0 1px #fff;
+
+		text-align: center;
+
+		h1{
+			font-size: 40px;
+			color: #fff;
+		}
+		h4{
+			color: #dedede;
+		}
+	}
+
+	.bouncing-arrow{
+		position: absolute;
+		bottom: 1em;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+
+		-webkit-animation: 2s 1s infinite bounce;
+		   -moz-animation: 2s 1s infinite bounce;
+		     -o-animation: 2s 1s infinite bounce;
+			    animation: 2s 1s infinite bounce;
+	}
 }
 
-.center-container{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-
+.state-about{
+	background-color: #949494;
 	color: #fff;
-	text-shadow: 0 0 1px #fff;
-
-	text-align: center;
+	padding: 2em 1em;
 }
