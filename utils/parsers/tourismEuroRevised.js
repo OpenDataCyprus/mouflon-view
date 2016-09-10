@@ -10,7 +10,7 @@ function parse(){
 	var touristArrivalsByMonth = workbook.Sheets[workbook.SheetNames[1]];
 	var touristArrivalsByCountry = workbook.Sheets[workbook.SheetNames[2]];
 	var airportArrivals = workbook.Sheets[workbook.SheetNames[3]];
-	var touristExpendituee = workbook.Sheets[workbook.SheetNames[4]];
+	var touristExpenditure = workbook.Sheets[workbook.SheetNames[4]];
 	var revenueFromTourismByMonth = workbook.Sheets[workbook.SheetNames[5]];
 	var perCapitaRevenueFromTourismByMonth = workbook.Sheets[workbook.SheetNames[6]];
 
@@ -106,7 +106,67 @@ function parse(){
 	})();
 
 	var touristExpenditurePerCapitalCurrentYear = (function(){
-		return touristExpendituee['Z129'].v;
+		return touristExpenditure['Z129'].v;
+	})();
+
+	var touristExpenditurePerCapitalPreviousYear = (function(){
+		return touristExpenditure['Z121'].v;
+	})();
+
+	var touristExpenditurePerCapital = (function(){
+		let years = [
+			{ label: '2012', row: 97},
+			{ label: '2013', row: 113},
+			{ label: '2014', row: 113}, // TODO: Ask K why the 2 years are the same
+			{ label: '2015', row: 121},
+			{ label: '2016', row: 129}
+		];
+
+		return years.map((year) => {
+			let values = [];
+
+			for(let i=67;i<=89;i+=2){
+				let cell = touristExpenditure[String.fromCharCode(i) + year.row];
+				values.push(!cell ? 0 : cell.v);
+			}
+
+			return {
+				'year': year.label,
+				'values': values
+			};
+		});
+	})();
+
+	var touristExpenditurePerCapitalPercentageOfChange = (function(){
+		let years = [
+			{ label: '2015 vs 2014', row: 233},
+			{ label: '2016 vs 2015', row: 239}
+		];
+		/**
+		 * cat
+		 $D.$B$236,
+		 $D.$D$236,
+		 $D.$F$236,
+		 $D.$H$236,$D.$J$236,$D.$L$236,$D.$N$236,$D.$N$236,$D.$P$236,$D.$R$236,$D.$T$236,$D.$V$236,
+
+		 $D.$X$236
+		 */
+		return years.map((year) => {
+			let values = [];
+
+			for(let i=66;i<=88;i+=2){
+				let cell = touristExpenditure[String.fromCharCode(i) + year.row];
+				values.push({
+					month: touristExpenditure[String.fromCharCode(i) + 236].v,
+					value: !cell ? 0 : cell.v
+				});
+			}
+
+			return {
+				'year': year.label,
+				'values': values
+			};
+		});
 	})();
 
 	return [
@@ -133,6 +193,18 @@ function parse(){
 		{
 			title: 'Tourist expenditure per capital current year',
 			data: touristExpenditurePerCapitalCurrentYear
+		},
+		{
+			title: 'Tourist expenditure per capital previous year',
+			data: touristExpenditurePerCapitalPreviousYear
+		},
+		{
+			title: 'Tourist expenditure per capital',
+			data: touristExpenditurePerCapital
+		},
+		{
+			title: 'Tourist expenditure per capital (% of change)',
+			data: touristExpenditurePerCapitalPercentageOfChange
 		}
 	]
 }
