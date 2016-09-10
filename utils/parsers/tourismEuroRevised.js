@@ -169,6 +169,88 @@ function parse(){
 		});
 	})();
 
+	var revenueFromTourismByMonthCurrentYear = (function(){
+		return revenueFromTourismByMonth['AG19'].v * 1000;
+	})();
+
+	var revenueFromTourismByMonthPreviousYear = (function(){
+		return revenueFromTourismByMonth['AE19'].v * 1000;
+	})();
+
+	var revenueFromTourismByMonthChart = (function(){
+		let years = [
+			{ label: '2014', cell: 'AC'},
+			{ label: '2015', cell: 'AE'},
+			{ label: '2016', cell: 'AG'}
+		];
+
+		return years.map((year) => {
+			let values = [];
+
+			for(let i=7;i<=18;i++){
+				let cell = revenueFromTourismByMonth[year.cell + i];
+				values.push(!cell ? 0 : cell.v);
+			}
+
+			return {
+				'year': year.label,
+				'values': values
+			};
+		});
+	})();
+
+	var revenueFromTourismByMontChangeChart = (function(){
+		let years = [
+			{ label: '2014', cell: 'AT'},
+			{ label: '2015', cell: 'AU'},
+			{ label: '2016', cell: 'AV'}
+		];
+
+		return years.map((year) => {
+			let values = [];
+
+			for(let i=7;i<=18;i++){
+				let cell = revenueFromTourismByMonth[year.cell + i];
+				values.push(!cell ? 0 : cell.v);
+			}
+
+			return {
+				'year': year.label,
+				'values': values
+			};
+		});
+	})();
+
+	var perCapitaRevenueFromTourismByMonthCurrentYear = (function(){
+		return perCapitaRevenueFromTourismByMonth['AK19'].v * 1000;
+	})();
+
+	var perCapitaRevenueFromTourismByMonthPreviousYear = (function(){
+		return perCapitaRevenueFromTourismByMonth['AI19'].v * 1000;
+	})();
+
+	var perCapitaRevenueFromTourismByMonthChart = (function(){
+		let years = [
+			{ label: '2014', cell: 'AB'},
+			{ label: '2015', cell: 'AD'},
+			{ label: '2016', cell: 'AF'}
+		];
+
+		return years.map((year) => {
+			let values = [];
+
+			for(let i=7;i<=18;i++){
+				let cell = perCapitaRevenueFromTourismByMonth[year.cell + i];
+				values.push(!cell ? 0 : cell.v);
+			}
+
+			return {
+				'year': year.label,
+				'values': values
+			};
+		});
+	})();
+
 	return [
 		{
 			title: 'Number of tourists current year (projected)',
@@ -205,6 +287,34 @@ function parse(){
 		{
 			title: 'Tourist expenditure per capital (% of change)',
 			data: touristExpenditurePerCapitalPercentageOfChange
+		},
+		{
+			title: 'Revenue from tourism by month current year (projected)',
+			data: revenueFromTourismByMonthCurrentYear
+		},
+		{
+			title: 'Revenue from tourism by month previous year',
+			data: revenueFromTourismByMonthPreviousYear
+		},
+		{
+			title: 'Revenue from tourism by month',
+			data: revenueFromTourismByMonthChart
+		},
+		{
+			title: 'Revenue % change from tourism by month',
+			data: revenueFromTourismByMontChangeChart
+		},
+		{
+			title: 'Per capita revenue from tourism by month current year (projected)',
+			data: perCapitaRevenueFromTourismByMonthCurrentYear
+		},
+		{
+			title: 'Per capita revenue from tourism by month previous year',
+			data: perCapitaRevenueFromTourismByMonthPreviousYear
+		},
+		{
+			title: 'Per capita revenue from tourism by month',
+			data: perCapitaRevenueFromTourismByMonthChart
 		}
 	]
 }
