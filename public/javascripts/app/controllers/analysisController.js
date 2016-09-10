@@ -22,74 +22,124 @@
 			series: Data.data[2].data.map(function(el){
 				return {
 					name: el.year,
-					data: el.values
+					data: el.values.filter(function(el){
+						return el;
+					})
 				};
 			}),
 			title: { text: '' }
 		};
-
-		//Data.data[3].config = {
-		//	options: {
-		//		xAxis: [{ categories: extractData0('name') }],
-		//			yAxis: [
-		//			{
-		//				labels: {
-		//					style: {
-		//						color: '#89A54E'
-		//					}
-		//				},
-		//				title: {
-		//					text: 'Efficiency',
-		//					style: {
-		//						color: '#89A54E'
-		//					}
-		//				},
-		//				opposite: true
-		//
-		//			},
-		//			{
-		//				gridLineWidth: 0,
-		//				title: {
-		//					text: 'Efficient Notifications',
-		//					style: {
-		//						color: '#4572A7'
-		//					}
-		//				},
-		//				labels: {
-		//					style: {
-		//						color: '#4572A7'
-		//					}
-		//				}
-		//
-		//			},
-		//			{
-		//				gridLineWidth: 0,
-		//				title: {
-		//					text: 'Push Notifications',
-		//					style: {
-		//						color: '#AA4643'
-		//					}
-		//				},
-		//				labels: {
-		//					style: {
-		//						color: '#AA4643'
-		//					}
-		//				}
-		//			}
-		//		],
-		//			tooltip: {
-		//			shared: true
-		//		}
-		//	},
-		//	series: [
-		//		{ name: 'Push Notifications', 		color: '#4572A7', type: 'column', data: extractData0('pushNotifications'), 		yAxis: 2 },
-		//		{ name: 'Efficient Notifications', 	color: '#AA4643', type: 'column', data: extractData0('efficientNotifications'), yAxis: 1 },
-		//		{ name: 'Efficiency', 				color: '#89A54E', type: 'spline', data: extractData0('efficiency'), 			tooltip: { valueSuffix: ' %' } }
-		//	],
-		//		title: {
-		//	text: ''
-		//}
-
+		Data.data[3].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[4].config = {
+			options: {
+				chart: { type: 'pie' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[5].config = undefined;
+		Data.data[6].config = undefined;
+		Data.data[7].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[8].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[9].config = undefined;
+		Data.data[10].config = undefined;
+		Data.data[11].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[12].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
+		Data.data[13].config = undefined;
+		Data.data[14].config = undefined;
+		Data.data[15].config = {
+			options: {
+				chart: { type: 'line' },
+				xAxis: { categories: MONTHS }
+			},
+			series: Data.data[2].data.map(function(el){
+				return {
+					name: el.year,
+					data: el.values.filter(function(el){
+						return el;
+					})
+				};
+			}),
+			title: { text: '' }
+		};
 
 		$scope.charts = Data.data.map(function(item , index){
 			item.size = 6;

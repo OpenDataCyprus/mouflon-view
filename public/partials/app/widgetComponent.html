@@ -6,7 +6,8 @@
 		<hr>
 		<div class="wc__body-wrapper">
 			<div class="wc__body">
-				<highchart config="widget.config"></highchart>
+				<highchart config="widget.config" ng-if="widget.config"></highchart>
+				<p ng-bind="widget.data" ng-if="!widget.config"></p>
 			</div>
 		</div>
 	</div>

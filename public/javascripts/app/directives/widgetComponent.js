@@ -16,9 +16,11 @@
 			},
 			templateUrl: 'partials/app/widgetComponent.html',
 			link: function($scope){
-				$timeout(function(){
-					$scope.widget.config.getHighcharts().reflow()
-				});
+				if($scope.widget.config){
+					$timeout(function(){
+						$scope.widget.config.getHighcharts().reflow()
+					});
+				}
 			}
 		};
 	}
