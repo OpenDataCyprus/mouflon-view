@@ -10,4 +10,10 @@ router.get('/', (req, res) => {
 	});
 });
 
+router.get('/app', (req, res) => {
+	res.render('app', {
+		title: 'App'
+	});
+});
+
 module.exports = router;

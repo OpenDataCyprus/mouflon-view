@@ -24,6 +24,7 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.6.3",
     "highcharts": "^4.2.6",
-    "highcharts-ng": "^0.0.12"
+    "highcharts-ng": "^0.0.12",
+    "angular-ui-router": "^0.3.1"
   }
 }
