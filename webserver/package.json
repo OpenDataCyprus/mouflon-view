@@ -15,7 +15,7 @@
 		"open",
 		"data"
 	],
-	"author": "Stefanos Chrs",
+	"author": "Stefanos Chrs <stefanoschrs@hotmail.com>",
 	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/OpenDataCyprus/mouflon-view/issues"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app='MouflonView' lang="en" ng-strict-di>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +10,13 @@
 
 	<link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.min.css' />
 
-	<link rel='stylesheet' href='/stylesheets/index/style.css' />
+	<link rel='stylesheet' href='/stylesheets/app/style.css' />
 </head>
 <body>
-	<h1>Welcome to Mouflon View!</h1>
-	<a href="/app">Enter</a>
+	<div ui-view=""></div>
+
+	<script type="text/javascript" src='/vendor/angular/angular.js'></script>
+
+	<script type="text/javascript" src='/javascripts/app/app.js'></script>
 </body>
 </html>
