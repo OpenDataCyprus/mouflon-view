@@ -8,6 +8,18 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.navbar-default{
+	background-color: #e74c3c;
+	border-radius: 0;
+	border: 0;
+
+	.navbar-brand{
+		&, &:hover, &:active{
+			color: #fff !important;
+		}
+	}
+}
+
 [ng-click], [ui-stef]{
 	cursor: pointer;
 }

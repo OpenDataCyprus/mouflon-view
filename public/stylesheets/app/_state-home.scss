@@ -1,0 +1,55 @@
+.state-home{
+	margin-top: 5em;
+	text-align: center;
+
+	h1{
+		padding-bottom: 1em;
+	}
+
+	.category__container{
+		display: inline-block;
+		width: 250px;
+		height: 250px;
+		margin: 1em;
+		position: relative;
+		border: 1px solid #666;
+		border-radius: 5px;
+
+		&.selected{
+			border: 1px solid #333;
+			box-shadow: 0 0 1px 3px #666;
+		}
+
+		.coming-soon{
+			position: absolute;
+			top: -5px;
+			left: -7px;
+		}
+	}
+
+	.selected-country-typeahead {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 1000;
+		display: none;
+		background-color: #f9f9f9;
+
+		& > .message {
+			padding: 10px 20px;
+			border-bottom: 1px solid #ddd;
+			color: #868686;
+		}
+
+		& > .dropdown-menu {
+			position: static;
+			float: none;
+			display: block;
+			min-width: 160px;
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
