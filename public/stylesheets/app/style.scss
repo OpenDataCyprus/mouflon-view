@@ -1,5 +1,7 @@
 @import "compass/css3";
 
+@import "variables";
+
 @import "state-home";
 @import "state-analysis";
 
@@ -12,13 +14,13 @@ body {
 }
 
 .navbar-default{
-	background-color: #e74c3c;
+	background-color: $nav-bg-color;
 	border-radius: 0;
 	border: 0;
 
 	.navbar-brand{
 		&, &:hover, &:active{
-			color: #fff !important;
+			color: $nav-color !important;
 		}
 	}
 }

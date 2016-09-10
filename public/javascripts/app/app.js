@@ -4,6 +4,7 @@
 	angular
 		.module('MouflonView', [
 			'ui.router',
-			'ui.bootstrap'
+			'ui.bootstrap',
+			'highcharts-ng'
 		]);
 })();

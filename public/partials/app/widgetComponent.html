@@ -1,8 +1,9 @@
 <div class="col-md-{{widget.size}} widget-component">
 	<div class="wc__box">
 		<div class="wc__heading">
-			<div class="wc__title" ng-bind="widget.title"></div>
+			<h3 class="wc__title" ng-bind="widget.title"></h3>
 		</div>
+		<hr>
 		<div class="wc__body-wrapper">
 			<div class="wc__body">
 				<highchart config="widget.config"></highchart>
