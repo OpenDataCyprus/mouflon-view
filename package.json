@@ -30,7 +30,8 @@
     "morgan": "~1.7.0",
     "node-compass": "0.2.3",
     "pg": "^6.1.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "xlsx": "^0.8.0"
   },
   "engines": {
     "node": "4.4.7"
