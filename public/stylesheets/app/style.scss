@@ -1,7 +1,13 @@
 @import "compass/css3";
 
+@import "state-home";
+
 body {
 	height: 100vh;
 	margin: 0;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+[ng-click], [ui-stef]{
+	cursor: pointer;
 }

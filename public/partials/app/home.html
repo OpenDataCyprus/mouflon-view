@@ -1,1 +1,50 @@
-Hello Home
+<div class="state-home container">
+	<h1 class="text-left">
+		Select category
+	</h1>
+
+	<div class="container">
+		<div class="category__container" ng-class="{'selected' : selectedCategory === 'tourism'}" ng-click="selectCategory()">
+			<img src="images/tourism.png" alt="Tourism">
+			<h4>Tourism</h4>
+		</div>
+		<div class="category__container">
+			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
+			<img src="images/tourism.png" alt="Tourism">
+			<h4>Tourism</h4>
+		</div>
+		<div class="category__container">
+			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
+			<img src="images/tourism.png" alt="Tourism">
+			<h4>Tourism</h4>
+		</div>
+		<div class="category__container">
+			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
+			<img src="images/tourism.png" alt="Tourism">
+			<h4>Tourism</h4>
+		</div>
+	</div>
+	<br><br>
+
+	<h1 class="text-left">
+		Select Country
+	</h1>
+	<div>
+		<input type="text"
+			   class="form-control"
+			   placeholder="Custom template"
+			   ng-model="selectedCountry"
+			   uib-typeahead="country as country.name for country in countries | filter:{name:$viewValue}"
+			   typeahead-template-url="partials/app/selected-country-typeahead-template.html"
+			   typeahead-show-hint="true"
+			   typeahead-min-length="0">
+	</div>
+	<br><br>
+
+	<div>
+		<button class="btn btn-primary" ng-disabled="!selectedCategory || !selectedCountry" ui-sref="analysis">
+			Analyze
+		</button>
+	</div>
+	<br><br>
+</div>

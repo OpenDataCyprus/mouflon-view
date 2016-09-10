@@ -3,6 +3,7 @@
 
 	angular
 		.module('MouflonView', [
-			'ui.router'
+			'ui.router',
+			'ui.bootstrap'
 		]);
 })();

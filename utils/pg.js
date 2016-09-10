@@ -14,7 +14,6 @@ function testConnection(){
 					return reject(err);
 				}
 
-				console.log(result)
 				return resolve(result);
 			});
 		});

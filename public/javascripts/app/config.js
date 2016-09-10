@@ -15,9 +15,14 @@
 
 		sp.state('home', {
 			url: '/',
-			title: 'Home',
 			templateUrl: 'partials/app/home.html',
 			controller: 'HomeController'
+		});
+
+		sp.state('analysis', {
+			url: '/analysis',
+			templateUrl: 'partials/app/analysis.html',
+			controller: 'AnalysisController'
 		});
 
 		$urlRouterProvider.otherwise('/');
@@ -26,3 +31,4 @@
 		$compileProvider.debugInfoEnabled(true);
 	}
 })();
+
