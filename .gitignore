@@ -1,8 +1,8 @@
-**/node_modules
-**/vendor
+node_modules
 
-**/npm-debug.log
+npm-debug.log
 
-**/.sass-cache
+public/vendor
+public/.sass-cache
 
 .idea

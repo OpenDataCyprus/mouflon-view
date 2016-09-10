@@ -31,7 +31,7 @@
 		"node-compass": "0.2.3",
 		"serve-favicon": "~2.3.0"
 	},
-	"engine": {
+	"engines": {
 		"node": "4.4.7"
 	}
 }
