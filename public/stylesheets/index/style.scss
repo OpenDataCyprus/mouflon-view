@@ -1,10 +1,22 @@
 @import "compass/css3";
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	height: 100vh;
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+	background-image: url("../../images/mouflon-bg.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
-a {
-  color: #00B7FF;
+.center-container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	color: #fff;
+	text-shadow: 0 0 1px #fff;
+
+	text-align: center;
 }

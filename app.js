@@ -13,7 +13,9 @@ const api 		= require('./routes/api');
 
 const isDev = process.env.NODE_ENV === 'development';
 
+
 var app = express();
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,7 +27,9 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 app.use(cookieParser());
-app.use(compass({mode: 'expanded'}));
+app.use(compass({
+	mode: 'compressed'
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -39,7 +43,7 @@ app.use((req, res, next) => {
 });
 
 if(isDev){
-	app.use((err, req, res, next) => {
+	app.use((err, req, res) => {
 		res.status(err.status || 500);
 		res.render('error', {
 			message: err.message,
@@ -48,7 +52,7 @@ if(isDev){
 	});
 }
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
 	res.status(err.status || 500);
 	res.render('error', {
 		message: err.message,
