@@ -22,7 +22,13 @@
 		sp.state('analysis', {
 			url: '/analysis',
 			templateUrl: 'partials/app/analysis.html',
-			controller: 'AnalysisController'
+			controller: 'AnalysisController',
+			resolve: {
+				Data: ['$http', function($http){
+					// TODO: Change static string to args from ui-sref when more categories are implemented
+					return $http.get('/api/charts?country=CYP&category=tourism');
+				}]
+			}
 		});
 
 		$urlRouterProvider.otherwise('/');
