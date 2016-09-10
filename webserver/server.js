@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('webserver:server');
+var app = require('./app');
+var debug = require('debug')('mouflon-view:server');
 var http = require('http');
 
 /**
