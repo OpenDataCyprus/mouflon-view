@@ -25,7 +25,7 @@ function parse(){
 				}
 			}
 
-			return parseInt(sum * 2);
+			return parseInt(sum * 2) * 1000;
 		})();
 
 		var numberOfTouristsPreviousYear = (function(){
@@ -38,7 +38,7 @@ function parse(){
 				}
 			}
 
-			return parseInt(sum);
+			return parseInt(sum) * 1000;
 		})();
 
 		var touristArrivalsByMonthChart = (function(){
@@ -265,7 +265,7 @@ function parse(){
 			},
 			{
 				title: 'Number of tourists (difference)',
-				data: (((numberOfTouristsCurrentYear - numberOfTouristsPreviousYear) / numberOfTouristsPreviousYear) * 100) + '%',
+				data: (((numberOfTouristsCurrentYear - numberOfTouristsPreviousYear) / numberOfTouristsPreviousYear) * 100).toFixed(2) + '%',
 				alias: 'numberOfTouristsDifference'
 			},
 			{
@@ -300,7 +300,7 @@ function parse(){
 			},
 			{
 				title: 'Tourist expenditure per capital (difference)',
-				data: (((touristExpenditurePerCapitalCurrentYear - touristExpenditurePerCapitalPreviousYear) / touristExpenditurePerCapitalPreviousYear) * 100) + '%',
+				data: (((touristExpenditurePerCapitalCurrentYear - touristExpenditurePerCapitalPreviousYear) / touristExpenditurePerCapitalPreviousYear) * 100).toFixed(2) + '%',
 				alias: 'numberOfTouristsDifference'
 			},
 			{
@@ -325,7 +325,7 @@ function parse(){
 			},
 			{
 				title: 'Revenue from tourism by month (difference)',
-				data: (((revenueFromTourismByMonthCurrentYear - revenueFromTourismByMonthPreviousYear) / revenueFromTourismByMonthPreviousYear) * 100) + '%',
+				data: (((revenueFromTourismByMonthCurrentYear - revenueFromTourismByMonthPreviousYear) / revenueFromTourismByMonthPreviousYear) * 100).toFixed(2) + '%',
 				alias: 'numberOfTouristsDifference'
 			},
 			{
@@ -350,7 +350,7 @@ function parse(){
 			},
 			{
 				title: 'Per capita revenue from tourism by month (difference)',
-				data: (((perCapitaRevenueFromTourismByMonthCurrentYear - perCapitaRevenueFromTourismByMonthPreviousYear) / perCapitaRevenueFromTourismByMonthPreviousYear) * 100) + '%',
+				data: (((perCapitaRevenueFromTourismByMonthCurrentYear - perCapitaRevenueFromTourismByMonthPreviousYear) / perCapitaRevenueFromTourismByMonthPreviousYear) * 100).toFixed(2) + '%',
 				alias: 'numberOfTouristsDifference'
 			}
 		]);
