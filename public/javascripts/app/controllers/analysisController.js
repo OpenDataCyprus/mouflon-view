@@ -53,7 +53,6 @@
 		}
 		catch(e){}
 		try{
-			console.log(Data.data[5])
 			Data.data[5].config = {
 				options: {
 					chart: { type: 'pie' },
@@ -167,16 +166,13 @@
 			};
 		}
 		catch(e){}
-		try{ Data.data[16].config = undefined; } catch(e){}
-		try{ Data.data[17].config = undefined; } catch(e){}
-		try{ Data.data[18].config = undefined; } catch(e){}
 		try{
-			Data.data[19].config = {
+			Data.data[16].config = {
 				options: {
 					chart: { type: 'line' },
 					xAxis: { categories: MONTHS }
 				},
-				series: Data.data[19].data.map(function(el){
+				series: Data.data[16].data.map(function(el){
 					return {
 						name: el.year,
 						data: el.values.filter(function(el){
@@ -188,6 +184,9 @@
 			};
 		}
 		catch(e){}
+		try{ Data.data[17].config = undefined; } catch(e){}
+		try{ Data.data[18].config = undefined; } catch(e){}
+		try{ Data.data[19].config = undefined; } catch(e){}
 
 		Data.data[0].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
 		Data.data[1].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
