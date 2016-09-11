@@ -6,4 +6,6 @@ public/vendor
 
 public/.sass-cache
 
+datasets/.~lock*
+
 .idea
