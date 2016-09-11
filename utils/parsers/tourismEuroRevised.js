@@ -283,28 +283,29 @@ function parse(){
 				data: touristArrivalsByCountryChart,
 				alias: 'touristArrivalsByCountryChart'
 			},
+
 			{
-				title: 'Tourist expenditure per capital',
-				data: touristExpenditurePerCapital,
-				alias: 'touristExpenditurePerCapital'
-			},
-			{
-				title: 'Tourist expenditure per capital current year',
+				title: 'Tourist expenditure per capita current year',
 				data: touristExpenditurePerCapitalCurrentYear,
 				alias: 'touristExpenditurePerCapitalCurrentYear'
 			},
 			{
-				title: 'Tourist expenditure per capital previous year',
+				title: 'Tourist expenditure per capita previous year',
 				data: touristExpenditurePerCapitalPreviousYear,
 				alias: 'touristExpenditurePerCapitalPreviousYear'
 			},
 			{
-				title: 'Tourist expenditure per capital (difference)',
+				title: 'Tourist expenditure per capita (difference)',
 				data: (((touristExpenditurePerCapitalCurrentYear - touristExpenditurePerCapitalPreviousYear) / touristExpenditurePerCapitalPreviousYear) * 100).toFixed(2) + '%',
 				alias: 'numberOfTouristsDifference'
 			},
 			{
-				title: 'Tourist expenditure per capital (% of change)',
+				title: 'Tourist expenditure per capita',
+				data: touristExpenditurePerCapital,
+				alias: 'touristExpenditurePerCapital'
+			},
+			{
+				title: 'Tourist expenditure per capita (% of change)',
 				data: touristExpenditurePerCapitalPercentageOfChange,
 				alias: 'touristExpenditurePerCapitalPercentageOfChange'
 			},

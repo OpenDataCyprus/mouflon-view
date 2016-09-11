@@ -72,13 +72,16 @@
 			};
 		}
 		catch(e){}
+		try{ Data.data[6].config = undefined; } catch(e){}
+		try{ Data.data[7].config = undefined; } catch(e){}
+		try{ Data.data[8].config = undefined; } catch(e){}
 		try{
-			Data.data[6].config = {
+			Data.data[9].config = {
 				options: {
 					chart: { type: 'line' },
 					xAxis: { categories: MONTHS }
 				},
-				series: Data.data[6].data.map(function(el){
+				series: Data.data[9].data.map(function(el){
 					return {
 						name: el.year,
 						data: el.values.filter(function(el){
@@ -90,9 +93,6 @@
 			};
 		}
 		catch(e){}
-		try{ Data.data[7].config = undefined; } catch(e){}
-		try{ Data.data[8].config = undefined; } catch(e){}
-		try{ Data.data[9].config = undefined; } catch(e){}
 		try{
 			Data.data[10].config = {
 				options: {
@@ -177,7 +177,10 @@
 		Data.data.forEach(function(item , index){
 			item.size = item.config ? 6 : 4;
 
-			if(index < 5){
+			if([9,10,11].indexOf(index) !== -1){
+				item.size = 12;
+			}
+			if(index < 6){
 				$scope.chartsArrivals.push(item);
 			}
 			else{
