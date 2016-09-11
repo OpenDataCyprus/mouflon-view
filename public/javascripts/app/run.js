@@ -5,5 +5,11 @@
 		.module('MouflonView')
 		.run(run);
 
-	function run() {}
+	run.$inject = ['$rootScope', '$window'];
+
+	function run($rootScope, $window) {
+		$rootScope.$on('$stateChangeSuccess', function() {
+			document.body.scrollTop = $window.document.documentElement.scrollTop = 0;
+		});
+	}
 })();

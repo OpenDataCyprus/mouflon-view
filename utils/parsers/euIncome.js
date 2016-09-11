@@ -2,7 +2,7 @@
 
 const xlsx = require('xlsx');
 
-const PATH = `${__dirname}/../../datasets/TOURISMeurorevisedAugust2016WEB.xlsx`;
+const PATH = `${__dirname}/../../datasets/EUincome.xlsx`;
 
 function parse(){
 	return new Promise((resolve, reject) => {
@@ -264,11 +264,6 @@ function parse(){
 				alias: 'numberOfTouristsPreviousYear'
 			},
 			{
-				title: 'Number of tourists (difference current/previous)',
-				data: (((numberOfTouristsCurrentYear - numberOfTouristsPreviousYear) / numberOfTouristsPreviousYear) * 100) + '%',
-				alias: 'numberOfTouristsDifference'
-			},
-			{
 				title: 'Tourist arrivals by month (1000:1)',
 				data: touristArrivalsByMonthChart,
 				alias: 'touristArrivalsByMonthChart'
@@ -299,11 +294,6 @@ function parse(){
 				alias: 'touristExpenditurePerCapitalPreviousYear'
 			},
 			{
-				title: 'Tourist expenditure per capital (difference current/previous)',
-				data: (((touristExpenditurePerCapitalCurrentYear - touristExpenditurePerCapitalPreviousYear) / touristExpenditurePerCapitalPreviousYear) * 100) + '%',
-				alias: 'numberOfTouristsDifference'
-			},
-			{
 				title: 'Tourist expenditure per capital (% of change)',
 				data: touristExpenditurePerCapitalPercentageOfChange,
 				alias: 'touristExpenditurePerCapitalPercentageOfChange'
@@ -324,11 +314,6 @@ function parse(){
 				alias: 'revenueFromTourismByMonthPreviousYear'
 			},
 			{
-				title: 'Revenue from tourism by month (difference current/previous)',
-				data: (((revenueFromTourismByMonthCurrentYear - revenueFromTourismByMonthPreviousYear) / revenueFromTourismByMonthPreviousYear) * 100) + '%',
-				alias: 'numberOfTouristsDifference'
-			},
-			{
 				title: 'Revenue % change from tourism by month',
 				data: revenueFromTourismByMontChangeChart,
 				alias: 'revenueFromTourismByMontChangeChart'
@@ -342,11 +327,6 @@ function parse(){
 				title: 'Per capita revenue from tourism by month previous year',
 				data: perCapitaRevenueFromTourismByMonthPreviousYear,
 				alias: 'perCapitaRevenueFromTourismByMonthPreviousYear'
-			},
-			{
-				title: 'Per capita revenue from tourism by month (difference current/previous)',
-				data: (((perCapitaRevenueFromTourismByMonthCurrentYear - perCapitaRevenueFromTourismByMonthPreviousYear) / perCapitaRevenueFromTourismByMonthPreviousYear) * 100) + '%',
-				alias: 'numberOfTouristsDifference'
 			},
 			{
 				title: 'Per capita revenue from tourism by month',

@@ -13,6 +13,14 @@ function getParser(name){
 					.catch((err) =>{
 						return reject(err);
 					});
+			case 'euIncome':
+				require(__dirname + '/parsers/euIncome.js')()
+					.then((res) =>{
+						return resolve(res);
+					})
+					.catch((err) =>{
+						return reject(err);
+					});
 		}
 	});
 }
