@@ -18,7 +18,7 @@
 	<div class="state-home">
 		<div class="center-container">
 			<h1>Mouflon View</h1>
-			<h4>May the data bee with you</h4>
+			<h4>May the data beee with you</h4>
 			<br><br>
 
 			<button class="btn btn-human" ng-click="home.scrollTo('state-about')">
@@ -127,8 +127,12 @@
 					<img src="https://www.gcx.io/api/images/peer.png" alt="API Image">
 				</div>
 				<div class="col-md-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem hic inventore totam. Explicabo optio perspiciatis quo! A animi atque corporis eius incidunt ipsam omnis quae quo repellat reprehenderit. Corporis, deleniti.</p>
+					<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem hic inventore totam. Explicabo optio perspiciatis quo! A animi atque corporis eius incidunt ipsam omnis quae quo repellat reprehenderit. Corporis, deleniti.</p>
+						<i>**You are awesome, you don't need a description</i>
+					</div>
 					<br>
+
 					<a href="/api/docs">
 						<button class="btn btn-primary">
 							Dive in
@@ -151,6 +155,7 @@
 					</div>
 					<br>
 					<h4 class="text-center" ng-bind="member.name"></h4>
+					<strong ng-bind="member.headline"></strong>
 					<p>
 						<i ng-bind="member.role"></i>
 					</p>
