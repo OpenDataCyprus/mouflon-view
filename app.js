@@ -32,6 +32,13 @@ app.use(compass({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+if(!isDev){
+	app.use(require('compression')());
+	app.use(require('express-minify')({
+		cache: path.join(__dirname, 'cache')
+	}));
+}
+
 app.use('/', routes);
 app.use('/api', api);
 
