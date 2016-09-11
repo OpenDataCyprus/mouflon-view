@@ -1,6 +1,6 @@
 <div class="state-home container">
 	<h1 class="text-left">
-		Select category
+		<small>1.</small> Select category
 	</h1>
 
 	<div class="container">
@@ -10,29 +10,29 @@
 		</div>
 		<div class="category__container">
 			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
-			<img src="images/tourism.png" alt="Tourism">
-			<h4>Tourism</h4>
+			<img src="images/development.png" alt="Development">
+			<h4>Development</h4>
 		</div>
 		<div class="category__container">
 			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
-			<img src="images/tourism.png" alt="Tourism">
-			<h4>Tourism</h4>
+			<img src="images/employment.png" alt="Employment">
+			<h4>Employment</h4>
 		</div>
 		<div class="category__container">
 			<img class="coming-soon" src="images/coming-soon.png" alt="Coming Soon">
-			<img src="images/tourism.png" alt="Tourism">
-			<h4>Tourism</h4>
+			<img src="images/geospatial-data.png" alt="Geospatial Data">
+			<h4>Geospatial Data</h4>
 		</div>
 	</div>
 	<br><br>
 
 	<h1 class="text-left">
-		Select Country
+		<small>2.</small> Select Country
 	</h1>
 	<div>
 		<input type="text"
 			   class="form-control"
-			   placeholder="Custom template"
+			   placeholder="Let's say Cyprus :)"
 			   ng-model="selectedCountry"
 			   uib-typeahead="country as country.name for country in countries | filter:{name:$viewValue}"
 			   typeahead-template-url="partials/app/selected-country-typeahead-template.html"
@@ -41,8 +41,11 @@
 	</div>
 	<br><br>
 
-	<div>
-		<button class="btn btn-primary" ng-disabled="!selectedCategory || !selectedCountry" ui-sref="analysis">
+	<h1 class="text-left">
+		<small>3.</small> I'm Ready
+	</h1>
+	<div class="text-left">
+		<button class="btn btn-info" ng-disabled="!selectedCategory || !selectedCountry" ui-sref="analysis">
 			Analyze
 		</button>
 	</div>

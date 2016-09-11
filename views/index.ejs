@@ -18,11 +18,13 @@
 	<div class="state-home">
 		<div class="center-container">
 			<h1>Mouflon View</h1>
-			<h4>Watching be-fore you!</h4>
-			<button ng-click="home.scrollTo('state-about')">
-				Regular
+			<h4>May the data bee with you</h4>
+			<br><br>
+
+			<button class="btn btn-human" ng-click="home.scrollTo('state-about')">
+				Human
 			</button>
-			<button ng-click="home.scrollTo('state-how-it-works--dev')">
+			<button class="btn btn-developer" ng-click="home.scrollTo('state-how-it-works--dev')">
 				Developer
 			</button>
 		</div>
@@ -50,9 +52,12 @@
 				<div class="col-md-6">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem hic inventore totam. Explicabo optio perspiciatis quo! A animi atque corporis eius incidunt ipsam omnis quae quo repellat reprehenderit. Corporis, deleniti.</p>
 					<br>
-					<button class="btn btn-success">
-						Find out more
-					</button>
+
+					<a href="/app">
+						<button class="btn btn-success">
+							Find out more
+						</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -60,8 +65,8 @@
 
 	<div class="state-how-it-works--dev">
 		<div class="container">
-			<h1 class="heading">
-				I'm an awesome developer
+			<h1 class="heading text-center">
+				**Warning** Awesome Developer Only Section
 			</h1>
 			<div class="row">
 				<div class="col-md-6 text-center">
@@ -83,7 +88,7 @@
 	<div class="state-team">
 		<div class="container text-center">
 			<h1 class="heading">
-				Dream Team
+				Dreeam Teeam
 			</h1>
 			<div class="row">
 				<div class="col-md-3" ng-repeat="member in home.team">
@@ -91,9 +96,12 @@
 						<img ng-src="{{member.image}}" alt="{{member.name}}">
 					</div>
 					<h3 class="text-center" ng-bind="member.name"></h3>
-					<a target="_blank" ng-href="{{member.linkedin}}">
-						<i class="fa fa-linkedin"></i>
-					</a>
+					<p>
+						<i ng-bind="member.role"></i>
+					</p>
+					<!--<a target="_blank" ng-href="{{member.linkedin}}">-->
+						<!--<i class="fa fa-linkedin"></i>-->
+					<!--</a>-->
 				</div>
 			</div>
 		</div>

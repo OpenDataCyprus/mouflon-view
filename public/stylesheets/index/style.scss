@@ -84,6 +84,21 @@ body {
 	background-position: center;
 	background-attachment: fixed;
 
+	.btn-human{
+		color: #000;
+		background-color: #fff;
+		border-color: #f2f2f2;
+		border-radius: 35px;
+		margin: 0 .5em;
+	}
+	.btn-developer{
+		color: #fff;
+		background-color: transparent;
+		border-color: #adadad;
+		border-radius: 35px;
+		margin: 0 .5em;
+	}
+
 	.center-container{
 		position: absolute;
 		top: 50%;
