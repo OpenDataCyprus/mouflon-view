@@ -99,27 +99,7 @@
 					chart: { type: 'line' },
 					xAxis: { categories: MONTHS }
 				},
-				series: Data.data[10].data.map(function(el){
-					return {
-						name: el.year,
-						data: el.values.map(function(el){
-							return el.value;
-						}).filter(function(el){
-							return el;
-						})
-					};
-				}),
-				title: { text: '' }
-			};
-		}
-		catch(e){}
-		try{
-			Data.data[10].config = {
-				options: {
-					chart: { type: 'line' },
-					xAxis: { categories: MONTHS }
-				},
-				series: Data.data[10].data.map(function(el){
+				series: Data.data[3].data.map(function(el){
 					return {
 						name: el.year,
 						data: el.values.filter(function(el){
