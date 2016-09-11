@@ -252,6 +252,28 @@ function parse(){
 			});
 		})();
 
+		var perCapitaRevenueFromTourismByMonthChartAbsolute = (function(){
+			let years = [
+				{ label: '2014', cell: 'Y'},
+				{ label: '2015', cell: 'AA'},
+				{ label: '2016', cell: 'AC'}
+			];
+
+			return years.map((year) => {
+				let values = [];
+
+				for(let i=7;i<=18;i++){
+					let cell = perCapitaRevenueFromTourismByMonth[year.cell + i];
+					values.push(!cell ? 0 : cell.v);
+				}
+
+				return {
+					'year': year.label,
+					'values': values
+				};
+			});
+		})();
+
 		return resolve([
 			{
 				title: 'Number of tourists current year (projected)',
@@ -338,6 +360,11 @@ function parse(){
 				title: 'Per capita revenue from tourism by month (% of change)',
 				data: perCapitaRevenueFromTourismByMonthChart,
 				alias: 'perCapitaRevenueFromTourismByMonthChart'
+			},
+			{
+				title: 'Per capita revenue from tourism by month',
+				data: perCapitaRevenueFromTourismByMonthChartAbsolute,
+				alias: 'perCapitaRevenueFromTourismByMonthChartAbsolute'
 			},
 			{
 				title: 'Per capita revenue from tourism by month current year (projected)',

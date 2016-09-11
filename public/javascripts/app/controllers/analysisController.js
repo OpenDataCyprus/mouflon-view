@@ -168,21 +168,41 @@
 			};
 		}
 		catch(e){}
-		try{ Data.data[17].config = undefined; } catch(e){}
+		try{
+			Data.data[17].config = {
+				options: {
+					chart: { type: 'line' },
+					xAxis: { categories: MONTHS }
+				},
+				series: Data.data[17].data.map(function(el){
+					return {
+						name: el.year,
+						data: el.values.filter(function(el){
+							return el;
+						})
+					};
+				}),
+				title: { text: '' }
+			};
+		}
+		catch(e){}
 		try{ Data.data[18].config = undefined; } catch(e){}
 		try{ Data.data[19].config = undefined; } catch(e){}
+		try{ Data.data[20].config = undefined; } catch(e){}
 
 		$scope.chartsArrivals = [];
 		$scope.chartsExpenditure = [];
 		Data.data.forEach(function(item , index){
 			item.size = item.config ? 6 : 4;
 
-			if([9,10,11].indexOf(index) !== -1){
+			if([9,10,11,17].indexOf(index) !== -1){
 				item.size = 12;
 			}
+
 			if(index < 6){
 				$scope.chartsArrivals.push(item);
 			}
+
 			else{
 				$scope.chartsExpenditure.push(item);
 			}
