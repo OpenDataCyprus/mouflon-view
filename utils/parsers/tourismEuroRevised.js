@@ -223,18 +223,18 @@ function parse(){
 		})();
 
 		var perCapitaRevenueFromTourismByMonthCurrentYear = (function(){
-			return parseInt(perCapitaRevenueFromTourismByMonth['AK19'].v * 1000);
+			return parseInt(perCapitaRevenueFromTourismByMonth['AC19'].v * 1000);
 		})();
 
 		var perCapitaRevenueFromTourismByMonthPreviousYear = (function(){
-			return parseInt(perCapitaRevenueFromTourismByMonth['AI19'].v * 1000);
+			return parseInt(perCapitaRevenueFromTourismByMonth['AA19'].v * 1000);
 		})();
 
 		var perCapitaRevenueFromTourismByMonthChart = (function(){
 			let years = [
-				{ label: '2014', cell: 'AB'},
-				{ label: '2015', cell: 'AD'},
-				{ label: '2016', cell: 'AF'}
+				{ label: '2014', cell: 'AN'},
+				{ label: '2015', cell: 'AO'},
+				{ label: '2016', cell: 'AP'}
 			];
 
 			return years.map((year) => {
@@ -335,7 +335,7 @@ function parse(){
 				alias: 'revenueFromTourismByMontChangeChart'
 			},
 			{
-				title: 'Per capita revenue from tourism by month',
+				title: 'Per capita revenue from tourism by month (% of change)',
 				data: perCapitaRevenueFromTourismByMonthChart,
 				alias: 'perCapitaRevenueFromTourismByMonthChart'
 			},
