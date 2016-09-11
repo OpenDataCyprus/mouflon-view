@@ -1,13 +1,13 @@
 <div class="col-md-{{widget.size}} widget-component">
 	<div class="wc__box">
-		<div class="wc__heading">
+		<div class="wc__heading" ng-class="{'text-center': !widget.config}">
 			<h5 class="wc__title" ng-bind="widget.title"></h5>
 		</div>
 		<hr>
 		<div class="wc__body-wrapper">
 			<div class="wc__body">
 				<highchart config="widget.config" ng-if="widget.config"></highchart>
-				<p ng-bind="widget.data" ng-if="!widget.config"></p>
+				<h3 ng-bind="widget.data" ng-if="!widget.config"></h3>
 			</div>
 		</div>
 	</div>
