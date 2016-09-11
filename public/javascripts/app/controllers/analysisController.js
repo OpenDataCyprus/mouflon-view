@@ -55,15 +55,19 @@
 		try{
 			Data.data[5].config = {
 				options: {
-					chart: { type: 'pie' },
-					xAxis: {}
+					chart: { type: 'pie' }
 				},
-				series: Data.data[5].data.map(function(el){
-					return {
-						name: el.country,
-						data: el.value
-					};
-				}),
+				series: [
+					{
+						name: 'Country',
+						data: Data.data[5].data.map(function(el){
+							return {
+								name: el.country,
+								y: el.value
+							};
+						})
+					}
+				],
 				title: { text: '' }
 			};
 		}
@@ -188,28 +192,17 @@
 		try{ Data.data[18].config = undefined; } catch(e){}
 		try{ Data.data[19].config = undefined; } catch(e){}
 
-		Data.data[0].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[1].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[2].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[3].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[4].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[5].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[6].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[7].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[8].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[9].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[10].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[11].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[12].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[13].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[14].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[15].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-		Data.data[16].description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt doloremque enim itaque maiores mollitia placeat quidem soluta suscipit? Adipisci corporis dolore error labore modi obcaecati repellat sunt tenetur totam!';
-
-		$scope.charts = Data.data.map(function(item , index){
+		$scope.chartsArrivals = [];
+		$scope.chartsExpenditure = [];
+		Data.data.forEach(function(item , index){
 			item.size = item.config ? 6 : 4;
 
-			return item;
+			if(index < 5){
+				$scope.chartsArrivals.push(item);
+			}
+			else{
+				$scope.chartsExpenditure.push(item);
+			}
 		});
 	}
 })();
