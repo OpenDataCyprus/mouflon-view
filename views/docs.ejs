@@ -19,12 +19,18 @@
 
 	<div class="container">
 		<div ng-repeat="category in  home.categories">
-			<h2 ng-bind="category.title"></h2>
-			<input type="text" class="form-control" placeholder="Search for an endpoint.." ng-model="searchFor">
-			<div ng-repeat="endpoint in category.endpoints | filter:{description:searchFor}">
+			<h2>
+				<span ng-bind="category.title"></span>
+				<small>(<span ng-bind="category.endpoints.length"></span>)</small>
+			</h2>
+			<input type="text" class="form-control search-box" placeholder="Search for an endpoint.." ng-model="searchFor">
+			<div class="endpoint" ng-class="{'endpoint-last': $last }" ng-repeat="endpoint in category.endpoints | filter:{description:searchFor}">
 				<h4>
 					<strong ng-bind="endpoint.type"></strong>
 					<span ng-bind="endpoint.url"></span>
+					<a target="_blank" ng-href="{{endpoint.url}}">
+						<button class="btn btn-default try-button">Try Me</button>
+					</a>
 				</h4>
 				<p ng-bind="endpoint.description"></p>
 				<br>

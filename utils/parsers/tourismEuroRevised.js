@@ -255,67 +255,83 @@ function parse(){
 		return resolve([
 			{
 				title: 'Number of tourists current year (projected)',
-				data: numberOfTouristsCurrentYear
+				data: numberOfTouristsCurrentYear,
+				alias: 'numberOfTouristsCurrentYear'
 			},
 			{
 				title: 'Number of tourists previous year',
-				data: numberOfTouristsPreviousYear
+				data: numberOfTouristsPreviousYear,
+				alias: 'numberOfTouristsPreviousYear'
 			},
 			{
 				title: 'Tourist arrivals by month (1000:1)',
-				data: touristArrivalsByMonthChart
+				data: touristArrivalsByMonthChart,
+				alias: 'touristArrivalsByMonthChart'
 			},
 			{
 				title: 'Tourist arrivals by month (% of change)',
-				data: touristArrivalsByMonthChangeChart
+				data: touristArrivalsByMonthChangeChart,
+				alias: 'touristArrivalsByMonthChangeChart'
 			},
 			{
 				title: 'Tourist arrivals by country 2015',
-				data: touristArrivalsByCountryChart
+				data: touristArrivalsByCountryChart,
+				alias: 'touristArrivalsByCountryChart'
 			},
 			{
 				title: 'Tourist expenditure per capital current year',
-				data: touristExpenditurePerCapitalCurrentYear
+				data: touristExpenditurePerCapitalCurrentYear,
+				alias: 'touristExpenditurePerCapitalCurrentYear'
 			},
 			{
 				title: 'Tourist expenditure per capital previous year',
-				data: touristExpenditurePerCapitalPreviousYear
+				data: touristExpenditurePerCapitalPreviousYear,
+				alias: 'touristExpenditurePerCapitalPreviousYear'
 			},
 			{
 				title: 'Tourist expenditure per capital',
-				data: touristExpenditurePerCapital
+				data: touristExpenditurePerCapital,
+				alias: 'touristExpenditurePerCapital'
 			},
 			{
 				title: 'Tourist expenditure per capital (% of change)',
-				data: touristExpenditurePerCapitalPercentageOfChange
+				data: touristExpenditurePerCapitalPercentageOfChange,
+				alias: 'touristExpenditurePerCapitalPercentageOfChange'
 			},
 			{
 				title: 'Revenue from tourism by month current year (projected)',
-				data: revenueFromTourismByMonthCurrentYear
+				data: revenueFromTourismByMonthCurrentYear,
+				alias: 'revenueFromTourismByMonthCurrentYear'
 			},
 			{
 				title: 'Revenue from tourism by month previous year',
-				data: revenueFromTourismByMonthPreviousYear
+				data: revenueFromTourismByMonthPreviousYear,
+				alias: 'revenueFromTourismByMonthPreviousYear'
 			},
 			{
 				title: 'Revenue from tourism by month',
-				data: revenueFromTourismByMonthChart
+				data: revenueFromTourismByMonthChart,
+				alias: 'revenueFromTourismByMonthChart'
 			},
 			{
 				title: 'Revenue % change from tourism by month',
-				data: revenueFromTourismByMontChangeChart
+				data: revenueFromTourismByMontChangeChart,
+				alias: 'revenueFromTourismByMontChangeChart'
 			},
 			{
 				title: 'Per capita revenue from tourism by month current year (projected)',
-				data: perCapitaRevenueFromTourismByMonthCurrentYear
+				data: perCapitaRevenueFromTourismByMonthCurrentYear,
+				alias: 'perCapitaRevenueFromTourismByMonthCurrentYear'
 			},
 			{
 				title: 'Per capita revenue from tourism by month previous year',
-				data: perCapitaRevenueFromTourismByMonthPreviousYear
+				data: perCapitaRevenueFromTourismByMonthPreviousYear,
+				alias: 'perCapitaRevenueFromTourismByMonthPreviousYear'
 			},
 			{
 				title: 'Per capita revenue from tourism by month',
-				data: perCapitaRevenueFromTourismByMonthChart
+				data: perCapitaRevenueFromTourismByMonthChart,
+				alias: 'perCapitaRevenueFromTourismByMonthChart'
 			}
 		]);
 	})

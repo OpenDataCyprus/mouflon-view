@@ -2,14 +2,13 @@
 
 const express = require('express');
 
-const pgUtil = require(__dirname + '/../utils/pg');
 const cacher = require(__dirname + '/../utils/cacher');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
 	res.json({
-		message: 'Welcome to Mouflon View API! :-) For more info visit /api/docs'
+		message: 'Welcome to Mouflon View API! :-) Visit /api/docs for more details'
 	});
 });
 
@@ -27,10 +26,24 @@ router.get('/charts', (req, res) => {
 		.catch((err) => res.send(err));
 });
 
-router.get('/test-connection', (req, res) => {
-	pgUtil
-		.testConnection()
-		.then((result) => res.send(result))
+router.get('/raw', (req, res) => {
+	res.json({
+		message: 'So you want some RAW data? Visit /api/docs for more details'
+	});
+});
+
+router.get('/raw/tourism', (req, res) => {
+	if(!req.query.q){
+		return res.status(400).end('Missing Query Parameter');
+	}
+
+	cacher
+		.get('tourismEuroRevised')
+		.then((result) => {
+			let toReturn = result.find((el) => el.alias === req.query.q);
+
+			return toReturn ? res.json(toReturn) : res.status(404).end();
+		})
 		.catch((err) => res.send(err));
 });
 
