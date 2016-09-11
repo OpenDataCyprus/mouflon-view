@@ -49,6 +49,10 @@
 				<div class="col-md-6"></div>
 				<div class="col-md-6">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem hic inventore totam. Explicabo optio perspiciatis quo! A animi atque corporis eius incidunt ipsam omnis quae quo repellat reprehenderit. Corporis, deleniti.</p>
+					<br>
+					<button class="btn btn-success">
+						Find out more
+					</button>
 				</div>
 			</div>
 		</div>
@@ -56,29 +60,52 @@
 
 	<div class="state-how-it-works--dev">
 		<div class="container">
-			<h1>How does it work (developer)?</h1>
+			<h1 class="heading">
+				I'm an awesome developer
+			</h1>
 			<div class="row">
-				<div class="col-md-6"></div>
+				<div class="col-md-6 text-center">
+					<img src="https://www.gcx.io/api/images/peer.png" alt="API Image">
+				</div>
 				<div class="col-md-6">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem hic inventore totam. Explicabo optio perspiciatis quo! A animi atque corporis eius incidunt ipsam omnis quae quo repellat reprehenderit. Corporis, deleniti.</p>
+					<br>
+					<a href="/api/docs">
+						<button class="btn btn-primary">
+							Find out more
+						</button>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="state-team">
-		<div class="container">
-			<h1 class="team"></h1>
+		<div class="container text-center">
+			<h1 class="heading">
+				Dream Team
+			</h1>
 			<div class="row">
 				<div class="col-md-3" ng-repeat="member in home.team">
 					<div>
 						<img ng-src="{{member.image}}" alt="{{member.name}}">
 					</div>
-					<h3 ng-bind="member.name"></h3>
+					<h3 class="text-center" ng-bind="member.name"></h3>
+					<a target="_blank" ng-href="{{member.linkedin}}">
+						<i class="fa fa-linkedin"></i>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<footer class="text-center">
+		<i>
+			Made with <i class="fa fa-heart"></i>
+			<br>
+			<small><i class="fa fa-copyright"></i> Mouflon View 2016</small>
+		</i>
+	</footer>
 
 	<script type="text/javascript" src='/vendor/angular/angular.js'></script>
 	<script type="text/javascript" src='/vendor/angular-scroll/angular-scroll.js'></script>

@@ -17,10 +17,63 @@
 	100%{ bottom: 1em; }
 }
 
+@-webkit-keyframes pump{
+	0%{
+		transform: scale(1);
+	}
+	25%{
+		transform: scale(1.1);
+	}
+	50%{
+		transform: scale(1);
+	}
+	75%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1.2);
+	}
+}
+@-o-keyframes pump{
+	0%{
+		transform: scale(1);
+	}
+	25%{
+		transform: scale(1.1);
+	}
+	50%{
+		transform: scale(1);
+	}
+	75%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1.2);
+	}
+}
+@-moz-keyframes pump{
+	0%{ transform: scale(1); }
+	25%{ transform: scale(1.1); }
+	50%{ transform: scale(1); }
+	75%{ transform: scale(1.1); }
+	100%{ transform: scale(1.2); }
+}
+@keyframes pump{
+	0%{ transform: scale(1); }
+	25%{ transform: scale(1.1); }
+	50%{ transform: scale(1); }
+	75%{ transform: scale(1.1); }
+	100%{ transform: scale(1.2); }
+}
+
 
 body {
 	margin: 0;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+.heading{
+	margin-bottom: 1em;
 }
 
 .state-home{
@@ -68,4 +121,30 @@ body {
 	background-color: #949494;
 	color: #fff;
 	padding: 2em 1em;
+}
+
+.state-how-it-works, .state-how-it-works--dev{
+	padding: 3em 0;
+}
+
+.state-how-it-works--dev{
+	img{
+		display: inline-block;
+	}
+}
+
+.state-team{
+	background-color: #eee;
+	padding: 3em 0;
+}
+
+footer{
+	background-color: #121212;
+	color: #efefef;
+	padding: 1em;
+	.fa-heart{
+		padding: 0 1em;
+		color: darkred;
+		animation: pump .8s linear infinite;
+	}
 }

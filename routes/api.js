@@ -9,9 +9,16 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
 	res.json({
-		message: 'Welcome to Mouflon View API! :-)'
+		message: 'Welcome to Mouflon View API! :-) For more info visit /api/docs'
 	});
 });
+
+router.get('/docs', (req, res) => {
+	res.render('docs', {
+		title: 'Docs'
+	});
+});
+
 
 router.get('/charts', (req, res) => {
 	cacher
