@@ -1,30 +1,33 @@
 {
-	"name": "mouflon-view",
-	"description": "Mouflon View",
-	"main": "server.js",
-	"authors": [
-		"Stefanos Chrs <stefanoschrs@hotmail.com>"
-	],
-	"license": "GPL-3.0",
-	"keywords": [
-		"open data", "hackathon", "cyprus"
-	],
-	"homepage": "https://mouflonview.herokuapp.com/",
-	"private": true,
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"angular": "^1.5.8",
-		"bootstrap": "^3.3.7",
-		"font-awesome": "^4.6.3",
-		"highcharts": "^4.2.6",
-		"highcharts-ng": "^0.0.12",
-		"angular-ui-router": "^0.3.1",
-		"angular-bootstrap": "^2.1.3"
-	}
+  "name": "mouflon-view",
+  "description": "Mouflon View",
+  "main": "server.js",
+  "authors": [
+    "Stefanos Chrs <stefanoschrs@hotmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "open data",
+    "hackathon",
+    "cyprus"
+  ],
+  "homepage": "https://mouflonview.herokuapp.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "highcharts": "^4.2.6",
+    "highcharts-ng": "^0.0.12",
+    "angular-ui-router": "^0.3.1",
+    "angular-bootstrap": "^2.1.3",
+    "angular-scroll": "^1.0.0"
+  }
 }
