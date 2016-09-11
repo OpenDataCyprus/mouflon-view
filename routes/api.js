@@ -18,6 +18,10 @@ router.get('/docs', (req, res) => {
 	});
 });
 
+router.post('/notify', (req, res) => {
+	// TODO: Connect to database to handle with a cron the requests and send using Mailchimp the notifications
+	res.status(200).end();
+});
 
 router.get('/charts', (req, res) => {
 	cacher

@@ -24,6 +24,16 @@ body {
 			color: $nav-color !important;
 		}
 	}
+
+	.nav-link {
+		color: #fff !important;
+	}
+}
+
+.alert{
+	position: absolute;
+	top: 60px;
+	right: 3px;
 }
 
 [ng-click], [ui-stef]{

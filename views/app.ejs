@@ -20,8 +20,17 @@
 					Mouflon View
 				</a>
 			</div>
+			<ul class="nav navbar-nav pull-xs-right">
+				<li class="nav-item">
+					<a class="nav-link" ng-click="notifyMe()">
+						Notify Me
+					</a>
+				</li>
+			</ul>
 		</div>
 	</nav>
+
+	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" ng-bind="alert.msg"></div>
 
 	<div ui-view=""></div>
 
@@ -40,6 +49,7 @@
 
 	<!-- Controllers -->
 	<script type="text/javascript" src='/javascripts/app/controllers/homeController.js'></script>
+	<script type="text/javascript" src='/javascripts/app/controllers/notifyModalController.js'></script>
 	<script type="text/javascript" src='/javascripts/app/controllers/analysisController.js'></script>
 
 	<!-- Directives -->
